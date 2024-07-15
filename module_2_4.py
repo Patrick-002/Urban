@@ -12,4 +12,3 @@ for i in numbers:
             break
 print('Primes:', primes)
 print('Not Primes:', not_primes)
-
