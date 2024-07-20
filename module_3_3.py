@@ -12,3 +12,4 @@ print_params(**values_dict)
 
 values_list_2 = [9.42, 'ne true']
 print_params(*values_list_2, 42)
+print_params()
