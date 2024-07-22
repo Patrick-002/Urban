@@ -1,4 +1,4 @@
-def data_structure(structure, current_sum=0):
+def data_structure(*structure, current_sum=0):
         for i in structure:
             if isinstance(i, int):
                 current_sum += i
@@ -9,9 +9,9 @@ def data_structure(structure, current_sum=0):
                 for key, value in i.items():
                     list_from_dict.append(key)
                     list_from_dict.append(value)
-                current_sum = data_structure(list_from_dict, current_sum)
+                current_sum = data_structure(*list_from_dict, current_sum)
             else:
-                current_sum = data_structure(i, current_sum)
+                current_sum = data_structure(*i, current_sum)
         return current_sum
 
 print(data_structure([
