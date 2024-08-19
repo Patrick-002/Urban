@@ -20,6 +20,9 @@ class Video:
         self.time_now = time_now
         self.adult_mode = adult_mode
 
+    def __eq__(self, other):
+        return self.title == other.title
+
 
 class UrTube:
     def __init__(self):
@@ -54,8 +57,14 @@ class UrTube:
         self.current_user = None
 
     def add(self, *args):
-        for video in args:
-            self.videos.append(video)
+        for new_video in args:
+            is_new = True
+            for video in self.videos:
+                if video == new_video:
+                    is_new = False
+                    break
+            if is_new:
+                self.videos.append(new_video)
 
     def get_videos(self, search_word):
         list_found_videos = []
@@ -76,12 +85,12 @@ class UrTube:
         if current_video is None:
             print("Видео не найдено")
             return False
-        if current_video.adult_mode == True and self.current_user.age < 18:
+        if current_video.adult_mode == True and self.current_user.age < 17:
             print("Вам нет 18 лет, пожалуйста покиньте страницу")
             return False
         print(f"Сейчас вы смотрите '{current_video.title}'")
         for second in range(1, current_video.duration + 1):
-            print(f"Просмотр видео: {second} секунда")
+            print(second,  end=' ')
             current_video.time_now = second
             time.sleep(1)
         print("Конец видео")
