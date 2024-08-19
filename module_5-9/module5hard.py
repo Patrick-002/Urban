@@ -1,12 +1,12 @@
 import time
-class User:
 
+
+class User:
 
     def __init__(self, nickname, password, age):
         self.nickname = nickname
         self.password = hash(password)
         self.age = age
-
 
     def __str__(self):
         return str(self.nickname)
@@ -14,8 +14,7 @@ class User:
 
 class Video:
 
-
-    def __init__(self, title, duration, time_now = 0, adult_mode = False):
+    def __init__(self, title, duration, time_now=0, adult_mode=False):
         self.title = title
         self.duration = duration
         self.time_now = time_now
@@ -40,8 +39,7 @@ class UrTube:
         print("Неправильное имя или пароль")
         return False
 
-
-    def register(self,nickname, password, age):
+    def register(self, nickname, password, age):
         for user in self.users:
             if user.nickname == nickname:
                 print(f"Пользователь {nickname} уже существует")
@@ -51,14 +49,13 @@ class UrTube:
         self.users.append(new_user)
         print(f"Пользователь {nickname} успешно зарегистрирован")
         return True
+
     def log_out(self):
         self.current_user = None
-
 
     def add(self, *args):
         for video in args:
             self.videos.append(video)
-
 
     def get_videos(self, search_word):
         list_found_videos = []
@@ -77,9 +74,9 @@ class UrTube:
                 current_video = video
                 break
         if current_video is None:
-             print("Видео не найдено")
-             return False
-        if  current_video.adult_mode == True and self.current_user.age < 18:
+            print("Видео не найдено")
+            return False
+        if current_video.adult_mode == True and self.current_user.age < 18:
             print("Вам нет 18 лет, пожалуйста покиньте страницу")
             return False
         print(f"Сейчас вы смотрите '{current_video.title}'")
@@ -90,6 +87,7 @@ class UrTube:
         print("Конец видео")
         current_video.time_now = 0
         return True
+
 
 if __name__ == "__main__":
     ur = UrTube()
