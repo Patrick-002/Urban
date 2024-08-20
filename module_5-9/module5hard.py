@@ -85,7 +85,7 @@ class UrTube:
         if current_video is None:
             print("Видео не найдено")
             return False
-        if current_video.adult_mode == True and self.current_user.age < 17:
+        if current_video.adult_mode == True and self.current_user.age < 18:
             print("Вам нет 18 лет, пожалуйста покиньте страницу")
             return False
         print(f"Сейчас вы смотрите '{current_video.title}'")
