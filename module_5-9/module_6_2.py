@@ -1,7 +1,7 @@
 class Vehicle:
     _COLOR_VARIANTS = ['ultramarine', 'indigo', 'lime', 'cyan', 'crimson']
 
-    def __init__(self, owner: str, __model: str,__color: str,  __engine_power: int):
+    def __init__(self, owner: str, __model: str, __color: str, __engine_power: int):
         self.owner = owner
         self.model = __model
         self.engine_power = __engine_power
@@ -24,7 +24,7 @@ class Vehicle:
 
     def set_color(self, new_color: str):
         for color in self._COLOR_VARIANTS:
-             if new_color.lower() == color.lower():
+            if new_color.lower() == color.lower():
                 self.color = new_color
                 return True
         print(f"Нельзя сменить цвет на {new_color}")
@@ -32,7 +32,7 @@ class Vehicle:
 
 
 class Sedan(Vehicle):
-    def __init__(self,owner: str, __model: str, __engine_power: int, __color: str, __PASSENGERS_LIMIT = 5):
+    def __init__(self, owner: str, __model: str, __engine_power: int, __color: str, __PASSENGERS_LIMIT=5):
         super().__init__(owner, __model, __engine_power, __color)
         self.__PASSENGERS_LIMIT = __PASSENGERS_LIMIT
 
