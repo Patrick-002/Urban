@@ -8,7 +8,7 @@ class Figure:
         cls = type(self)  # Получение текущего класса
         sides_count = cls.sides_count  # определение текущего sides_count для корректной работы
         if len(sides) != sides_count:
-            self.__sides = [1] * Figure.sides_count
+            self.__sides = [1] * cls.sides_count
         else:
             self.__sides = list(sides)
         self.__color = color
@@ -98,3 +98,6 @@ if __name__ == '__main__':
 
     # Проверка объёма (куба):
     print(cube1.get_volume())
+    # проверка на единичную сторону
+    cube2 = Cube((222, 35, 130), 6, 6)
+    print(cube2.get_sides())
