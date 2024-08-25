@@ -1,5 +1,5 @@
 class Product:
-    def __init__(self, name:str, weight: float, category:str):
+    def __init__(self, name: str, weight: float, category: str):
         self.name = name
         self.weight = weight
         self.category = category
@@ -7,8 +7,9 @@ class Product:
     def __str__(self):
         return f'{self.name}, {self.weight}, {self.category}'
 
-class Shop():
-    def __init__(self, file_nam = 'products.txt'):
+
+class Shop:
+    def __init__(self, file_nam='products.txt'):
         self.__file_name = file_nam
 
     def get_products(self):
@@ -28,8 +29,9 @@ class Shop():
         file.close()
 
     def clear(self):
-        file = open(self.__file_name, 'w') # для очистки файла
+        file = open(self.__file_name, 'w')  # для очистки файла
         file.close()
+
 
 if __name__ == '__main__':
     s1 = Shop()
