@@ -10,3 +10,4 @@ for root, dirs, files in os.walk(directory):
         parent_dir = os.path.dirname(filepath)
         print(f'Обнаружен файл: {file}, Путь: {filepath}, Размер: {filesize} байт, Время изменения: {formatted_time},'
               f' Родительская директория: {parent_dir}')
+
