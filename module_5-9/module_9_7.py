@@ -10,11 +10,13 @@ def is_prime(funk):
         elif is_prime == False:
             print('Составное')
         return result
+
     return wrapper
+
 
 @is_prime
 def sum_three(a, b, c):
-    return a+b+c
+    return a + b + c
 
 
 if __name__ == '__main__':
