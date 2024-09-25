@@ -8,7 +8,7 @@ time_start = datetime.now()
 def write_words(word_count, file_name):
     with open(file_name, 'w', encoding='utf8') as file:
         for i in range(word_count):
-            file.write(f"Какое-то слово №{i + 1}\n")
+            file.write(f"Какое-то слово № {i + 1}\n")
             sleep(0.1)
 
 
